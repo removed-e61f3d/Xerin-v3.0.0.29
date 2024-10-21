@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{CB4D555C-06FF-4B3E-82D6-F0044065FAF3}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <LangVersion>11.0</LangVersion>
+    <AssemblyName>XVM.Core</AssemblyName>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>..\RELEASE\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="dnlib, Version=4.4.0.0, Culture=neutral, PublicKeyToken=50e96378b6e77999, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dnlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="KoiVM.Core.AST.ILAST\IILASTNode.cs" />
+    <Compile Include="KoiVM.Core.AST.ILAST\IILASTStatement.cs" />
+    <Compile Include="KoiVM.Core.AST.ILAST\ILASTAssignment.cs" />
+    <Compile Include="KoiVM.Core.AST.ILAST\ILASTExpression.cs" />
+    <Compile Include="KoiVM.Core.AST.ILAST\ILASTPhi.cs" />
+    <Compile Include="KoiVM.Core.AST.ILAST\ILASTTree.cs" />
+    <Compile Include="KoiVM.Core.AST.ILAST\ILASTVariable.cs" />
+    <Compile Include="KoiVM.Core.AST.ILAST\ILASTVariableType.cs" />
+    <Compile Include="KoiVM.Core.AST.IL\IHasOffset.cs" />
+    <Compile Include="KoiVM.Core.AST.IL\IILOperand.cs" />
+    <Compile Include="KoiVM.Core.AST.IL\ILBlock.cs" />
+    <Compile Include="KoiVM.Core.AST.IL\ILBlockTarget.cs" />
+    <Compile Include="KoiVM.Core.AST.IL\ILDataTarget.cs" />
+    <Compile Include="KoiVM.Core.AST.IL\ILImmediate.cs" />
+    <Compile Include="KoiVM.Core.AST.IL\ILInstrList.cs" />
+    <Compile Include="KoiVM.Core.AST.IL\ILInstruction.cs" />
+    <Compile Include="KoiVM.Core.AST.IL\ILJumpTable.cs" />
+    <Compile Include="KoiVM.Core.AST.IL\ILMethodTarget.cs" />
+    <Compile Include="KoiVM.Core.AST.IL\ILRegister.cs" />
+    <Compile Include="KoiVM.Core.AST.IL\ILRelReference.cs" />
+    <Compile Include="KoiVM.Core.AST.IR\IIROperand.cs" />
+    <Compile Include="KoiVM.Core.AST.IR\IRBlockTarget.cs" />
+    <Compile Include="KoiVM.Core.AST.IR\IRConstant.cs" />
+    <Compile Include="KoiVM.Core.AST.IR\IRDataTarget.cs" />
+    <Compile Include="KoiVM.Core.AST.IR\IRInstrList.cs" />
+    <Compile Include="KoiVM.Core.AST.IR\IRInstruction.cs" />
+    <Compile Include="KoiVM.Core.AST.IR\IRJumpTable.cs" />
+    <Compile Include="KoiVM.Core.AST.IR\IRMetaTarget.cs" />
+    <Compile Include="KoiVM.Core.AST.IR\IRPointer.cs" />
+    <Compile Include="KoiVM.Core.AST.IR\IRRegister.cs" />
+    <Compile Include="KoiVM.Core.AST.IR\IRVariable.cs" />
+    <Compile Include="KoiVM.Core.AST.IR\IRVariableType.cs" />
+    <Compile Include="KoiVM.Core.AST\ASTConstant.cs" />
+    <Compile Include="KoiVM.Core.AST\ASTExpression.cs" />
+    <Compile Include="KoiVM.Core.AST\ASTNode.cs" />
+    <Compile Include="KoiVM.Core.AST\ASTType.cs" />
+    <Compile Include="KoiVM.Core.AST\ASTVariable.cs" />
+    <Compile Include="KoiVM.Core.AST\EHInfo.cs" />
+    <Compile Include="KoiVM.Core.AST\InstrAnnotation.cs" />
+    <Compile Include="KoiVM.Core.AST\InstrCallInfo.cs" />
+    <Compile Include="KoiVM.Core.AST\PointerInfo.cs" />
+    <Compile Include="KoiVM.Core.AST\TypeInference.cs" />
+    <Compile Include="KoiVM.Core.CFG\BasicBlock.cs" />
+    <Compile Include="KoiVM.Core.CFG\BlockFlags.cs" />
+    <Compile Include="KoiVM.Core.CFG\BlockParser.cs" />
+    <Compile Include="KoiVM.Core.CFG\CILInstrList.cs" />
+    <Compile Include="KoiVM.Core.CFG\IBasicBlock.cs" />
+    <Compile Include="KoiVM.Core.CFG\ScopeBlock.cs" />
+    <Compile Include="KoiVM.Core.CFG\ScopeType.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Collections.Generic\BitHelper.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Collections.Generic\HashHelpers.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Collections.Generic\HashSet.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Collections.Generic\HashSetDebugView.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Collections.Generic\HashSetEqualityComparer.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Collections.Generic\IReadOnlyCollection.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Collections.Generic\IReadOnlyCollectionContract.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Collections.Generic\ISet.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Collections\IList.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Collections\IListContract.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Collections\IStructuralComparable.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Collections\IStructuralEquatable.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Diagnostics.Contracts.Internal\ContractHelper.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Diagnostics.Contracts\Contract.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Diagnostics.Contracts\ContractAbbreviatorAttribute.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Diagnostics.Contracts\ContractArgumentValidatorAttribute.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Diagnostics.Contracts\ContractClassAttribute.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Diagnostics.Contracts\ContractClassForAttribute.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Diagnostics.Contracts\ContractFailureKind.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Diagnostics.Contracts\ContractInvariantMethodAttribute.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Diagnostics.Contracts\ContractOptionAttribute.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Diagnostics.Contracts\ContractPublicPropertyNameAttribute.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Diagnostics.Contracts\ContractReferenceAssemblyAttribute.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Diagnostics.Contracts\ContractRuntimeIgnoredAttribute.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Diagnostics.Contracts\ContractVerificationAttribute.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Diagnostics.Contracts\PureAttribute.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Runtime.CompilerServices\ContractHelper.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Runtime.CompilerServices\ExtensionAttribute.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System.Runtime.CompilerServices\TypeDependencyAttribute.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System\ITuple.cs" />
+    <Compile Include="KoiVM.Core.Helpers.System\Tuple.cs" />
+    <Compile Include="KoiVM.Core.Helpers\MutationHelper.cs" />
+    <Compile Include="KoiVM.Core.Helpers\VisitFunc.cs" />
+    <Compile Include="KoiVM.Core.ILAST.Transformation\ArrayTransform.cs" />
+    <Compile Include="KoiVM.Core.ILAST.Transformation\BranchTransform.cs" />
+    <Compile Include="KoiVM.Core.ILAST.Transformation\ILASTTypeInference.cs" />
+    <Compile Include="KoiVM.Core.ILAST.Transformation\IndirectTransform.cs" />
+    <Compile Include="KoiVM.Core.ILAST.Transformation\NullTransform.cs" />
+    <Compile Include="KoiVM.Core.ILAST.Transformation\StringTransform.cs" />
+    <Compile Include="KoiVM.Core.ILAST.Transformation\VariableInlining.cs" />
+    <Compile Include="KoiVM.Core.ILAST\ILASTBuilder.cs" />
+    <Compile Include="KoiVM.Core.ILAST\ILASTTransformer.cs" />
+    <Compile Include="KoiVM.Core.ILAST\ITransformationHandler.cs" />
+    <Compile Include="KoiVM.Core.RT.Mutation\ConstantFields.cs" />
+    <Compile Include="KoiVM.Core.RT.Mutation\MethodPatcher.cs" />
+    <Compile Include="KoiVM.Core.RT.Mutation\NameService.cs" />
+    <Compile Include="KoiVM.Core.RT.Mutation\RTConstants.cs" />
+    <Compile Include="KoiVM.Core.RT.Mutation\RuntimeMutator.cs" />
+    <Compile Include="KoiVM.Core.RT.Mutation\RuntimePatcher.cs" />
+    <Compile Include="KoiVM.Core.RT.Mutation\RuntimeSearch.cs" />
+    <Compile Include="KoiVM.Core.RT\BasicBlockChunk.cs" />
+    <Compile Include="KoiVM.Core.RT\BasicBlockSerializer.cs" />
+    <Compile Include="KoiVM.Core.RT\BinaryChunk.cs" />
+    <Compile Include="KoiVM.Core.RT\HeaderChunk.cs" />
+    <Compile Include="KoiVM.Core.RT\IChunk.cs" />
+    <Compile Include="KoiVM.Core.RT\JumpTableChunk.cs" />
+    <Compile Include="KoiVM.Core.RT\OffsetComputeEventArgs.cs" />
+    <Compile Include="KoiVM.Core.RT\RTMap.cs" />
+    <Compile Include="KoiVM.Core.RT\SaveRuntime.cs" />
+    <Compile Include="KoiVM.Core.RT\VMRuntime.cs" />
+    <Compile Include="KoiVM.Core.Services\MethodTrace.cs" />
+    <Compile Include="KoiVM.Core.Services\RandomGenerator.cs" />
+    <Compile Include="KoiVM.Core.Services\RuntimeService.cs" />
+    <Compile Include="KoiVM.Core.Services\TraceService.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Transforms\BlockKeyTransform.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Transforms\EntryExitTransform.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Transforms\FixMethodRefTransform.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Transforms\ReferenceOffsetTransform.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Transforms\SaveInfoTransform.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Transforms\SaveRegistersTransform.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\AddHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\BeginCallHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\CallHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\CmpHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\DivHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\EHRetHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\EndCallHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\EntryHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\ExitHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\FConvHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\IConvHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\JmpHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\JnzHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\JzHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\LdobjHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\LeaveHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\MovHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\MulHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\NopHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\NorHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\PopHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\PushHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\RemHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\RetHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\ShlHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\ShrHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\StobjHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\SubHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\SwtHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\SxHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\TryHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL.Translation\VcallHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL\ILOpCode.cs" />
+    <Compile Include="KoiVM.Core.VMIL\ILPostTransformer.cs" />
+    <Compile Include="KoiVM.Core.VMIL\ILTransformer.cs" />
+    <Compile Include="KoiVM.Core.VMIL\ILTranslator.cs" />
+    <Compile Include="KoiVM.Core.VMIL\IPostTransform.cs" />
+    <Compile Include="KoiVM.Core.VMIL\ITransform.cs" />
+    <Compile Include="KoiVM.Core.VMIL\ITranslationHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIL\TranslationHelpers.cs" />
+    <Compile Include="KoiVM.Core.VMIR.RegAlloc\BlockLiveness.cs" />
+    <Compile Include="KoiVM.Core.VMIR.RegAlloc\LivenessAnalysis.cs" />
+    <Compile Include="KoiVM.Core.VMIR.RegAlloc\RegisterAllocator.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Transforms\ConstantTypePromotionTransform.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Transforms\EHTransform.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Transforms\GetSetFlagTransform.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Transforms\GuardBlockTransform.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Transforms\InitLocalTransform.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Transforms\InvokeTransform.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Transforms\LeaTransform.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Transforms\LogicTransform.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Transforms\MarkReturnRegTransform.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Transforms\MetadataTransform.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Transforms\RegisterAllocationTransform.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Transforms\StackFrameTransform.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\AddHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\AddOvfHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\AddOvfUnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\AndHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\BoxHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\BreakHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\BrfalseHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\BrHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\BrtrueHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\CallHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\CalliHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\CallvirtHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\CastclassHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\CeqHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\CgtHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\CgtUnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\CkfiniteHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\CltHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\CltUnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvI1Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvI2Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvI4Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvI8Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvIHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfI1Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfI1UnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfI2Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfI2UnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfI4Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfI4UnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfI8Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfI8UnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfIHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfIUnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfU1Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfU1UnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfU2Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfU2UnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfU4Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfU4UnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfU8Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfU8UnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfUHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvOvfUUnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvR4Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvR8Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvRUnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvU1Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvU2Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvU4Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvU8Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ConvUHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\DivHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\DivUnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\DupHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\EndfilterHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\EndfinallyHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\InitobjHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\IsinstHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LdargaHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LdargHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LdcI4Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LdcI8Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LdcR4Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LdcR8Handler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LdfldaHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LdfldHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LdftnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LdlocaHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LdlocHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LdnullHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LdobjHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LdsfldaHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LdsfldHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LdstrHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LdtokenHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LdvirtftnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LeaveHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\LocallocHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\MulHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\MulOvfHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\MulOvfUnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\NegHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\NewobjHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\NopHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\NotHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\OrHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\PopHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\RemHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\RemUnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\RetHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\RethrowHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ShlHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ShrHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ShrUnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\SizeofHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\StargHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\StfldHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\StlocHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\StobjHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\StsfldHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\SubHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\SubOvfHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\SubOvfUnHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\SwitchHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\ThrowHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\UnboxAnyHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\UnboxHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR.Translation\XorHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR\IRContext.cs" />
+    <Compile Include="KoiVM.Core.VMIR\IROpCode.cs" />
+    <Compile Include="KoiVM.Core.VMIR\IRTransformer.cs" />
+    <Compile Include="KoiVM.Core.VMIR\IRTranslator.cs" />
+    <Compile Include="KoiVM.Core.VMIR\ITransform.cs" />
+    <Compile Include="KoiVM.Core.VMIR\ITranslationHandler.cs" />
+    <Compile Include="KoiVM.Core.VMIR\TranslationHelpers.cs" />
+    <Compile Include="KoiVM.Core.VM\ArchDescriptor.cs" />
+    <Compile Include="KoiVM.Core.VM\DataDescriptor.cs" />
+    <Compile Include="KoiVM.Core.VM\FlagDescriptor.cs" />
+    <Compile Include="KoiVM.Core.VM\FuncSig.cs" />
+    <Compile Include="KoiVM.Core.VM\FuncSigDesc.cs" />
+    <Compile Include="KoiVM.Core.VM\OpCodeDescriptor.cs" />
+    <Compile Include="KoiVM.Core.VM\RegisterDescriptor.cs" />
+    <Compile Include="KoiVM.Core.VM\RTFlagDescriptor.cs" />
+    <Compile Include="KoiVM.Core.VM\RuntimeDescriptor.cs" />
+    <Compile Include="KoiVM.Core.VM\VCallOpsDescriptor.cs" />
+    <Compile Include="KoiVM.Core.VM\VMBlockKey.cs" />
+    <Compile Include="KoiVM.Core.VM\VMCallDescriptor.cs" />
+    <Compile Include="KoiVM.Core.VM\VMCalls.cs" />
+    <Compile Include="KoiVM.Core.VM\VMDescriptor.cs" />
+    <Compile Include="KoiVM.Core.VM\VMFlags.cs" />
+    <Compile Include="KoiVM.Core.VM\VMMethodInfo.cs" />
+    <Compile Include="KoiVM.Core.VM\VMRegisters.cs" />
+    <Compile Include="KoiVM.Core\GenericArguments.cs" />
+    <Compile Include="KoiVM.Core\GenericArgumentsStack.cs" />
+    <Compile Include="KoiVM.Core\GenericInstantiation.cs" />
+    <Compile Include="KoiVM.Core\IVMSettings.cs" />
+    <Compile Include="KoiVM.Core\MethodVirtualizer.cs" />
+    <Compile Include="KoiVM.Core\UnreachableException.cs" />
+    <Compile Include="KoiVM.Core\Utils.cs" />
+    <Compile Include="KoiVM.Core\Virtualizer.cs" />
+    <Compile Include="KoiVM.Internal\InitializePhase.cs" />
+    <Compile Include="KoiVM.Internal\KVMTask.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SR.cs" />
+    <Compile Include="SRCategoryAttribute.cs" />
+    <Compile Include="SRDescriptionAttribute.cs" />
+    <Compile Include="SRDisplayNameAttribute.cs" />
+    <Compile Include="XerinVM.Core\Usage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xerin.Core\Xerin.Core.csproj">
+      <Project>{3885f20a-f4f3-4b2c-9b67-1070654cfc68}</Project>
+      <Name>Xerin.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XVM.Runtime\XVM.Runtime.csproj">
+      <Project>{3e4c3b11-e38d-423b-adef-7edd7a949128}</Project>
+      <Name>XVM.Runtime</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xerin.Core", "Xerin.Core\Xerin.Core.csproj", "{3885F20A-F4F3-4B2C-9B67-1070654CFC68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xerin.Protections", "Xerin.Protections\Xerin.Protections.csproj", "{9E92FE5C-A5D7-46C9-AB92-F515AA6617ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xerin.Runtime", "Xerin.Runtime\Xerin.Runtime.csproj", "{AF73EB1E-984F-4D98-8B7E-A03085E31462}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XVM.Core", "XVM.Core\XVM.Core.csproj", "{CB4D555C-06FF-4B3E-82D6-F0044065FAF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XVM.Runtime", "XVM.Runtime\XVM.Runtime.csproj", "{3E4C3B11-E38D-423B-ADEF-7EDD7A949128}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XerinFuscator G3", "XerinFuscator G3\XerinFuscator G3.csproj", "{8168BA8E-AD59-48CC-B0FD-24F52593C02D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3885F20A-F4F3-4B2C-9B67-1070654CFC68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3885F20A-F4F3-4B2C-9B67-1070654CFC68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3885F20A-F4F3-4B2C-9B67-1070654CFC68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3885F20A-F4F3-4B2C-9B67-1070654CFC68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E92FE5C-A5D7-46C9-AB92-F515AA6617ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E92FE5C-A5D7-46C9-AB92-F515AA6617ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E92FE5C-A5D7-46C9-AB92-F515AA6617ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E92FE5C-A5D7-46C9-AB92-F515AA6617ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF73EB1E-984F-4D98-8B7E-A03085E31462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF73EB1E-984F-4D98-8B7E-A03085E31462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF73EB1E-984F-4D98-8B7E-A03085E31462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF73EB1E-984F-4D98-8B7E-A03085E31462}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB4D555C-06FF-4B3E-82D6-F0044065FAF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB4D555C-06FF-4B3E-82D6-F0044065FAF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB4D555C-06FF-4B3E-82D6-F0044065FAF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB4D555C-06FF-4B3E-82D6-F0044065FAF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E4C3B11-E38D-423B-ADEF-7EDD7A949128}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E4C3B11-E38D-423B-ADEF-7EDD7A949128}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E4C3B11-E38D-423B-ADEF-7EDD7A949128}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E4C3B11-E38D-423B-ADEF-7EDD7A949128}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8168BA8E-AD59-48CC-B0FD-24F52593C02D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8168BA8E-AD59-48CC-B0FD-24F52593C02D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8168BA8E-AD59-48CC-B0FD-24F52593C02D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8168BA8E-AD59-48CC-B0FD-24F52593C02D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B299815-5118-489F-B3F8-6956A1796BFB}
+	EndGlobalSection
+EndGlobal

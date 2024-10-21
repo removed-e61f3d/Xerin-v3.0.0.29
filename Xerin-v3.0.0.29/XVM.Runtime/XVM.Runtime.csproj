@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{3E4C3B11-E38D-423B-ADEF-7EDD7A949128}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <LangVersion>11.0</LangVersion>
+    <AssemblyName>XVM.Runtime</AssemblyName>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>..\RELEASE\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mutation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XVM.Runtime.Data\OpCodeMap.cs" />
+    <Compile Include="XVM.Runtime.Data\RefInfo.cs" />
+    <Compile Include="XVM.Runtime.Data\VCallMap.cs" />
+    <Compile Include="XVM.Runtime.Data\VMData.cs" />
+    <Compile Include="XVM.Runtime.Data\VMDATA_HEADER.cs" />
+    <Compile Include="XVM.Runtime.Data\VMExportInfo.cs" />
+    <Compile Include="XVM.Runtime.Data\VMFuncSig.cs" />
+    <Compile Include="XVM.Runtime.Dynamic\Constants.cs" />
+    <Compile Include="XVM.Runtime.Execution.Internal\ArrayStoreHelpers.cs" />
+    <Compile Include="XVM.Runtime.Execution.Internal\DirectCall.cs" />
+    <Compile Include="XVM.Runtime.Execution.Internal\EHHelper.cs" />
+    <Compile Include="XVM.Runtime.Execution.Internal\IValueTypeBox.cs" />
+    <Compile Include="XVM.Runtime.Execution.Internal\SizeOfHelper.cs" />
+    <Compile Include="XVM.Runtime.Execution.Internal\TypedReferenceHelpers.cs" />
+    <Compile Include="XVM.Runtime.Execution.Internal\ValueTypeBox.cs" />
+    <Compile Include="XVM.Runtime.Execution\EHFrame.cs" />
+    <Compile Include="XVM.Runtime.Execution\EHState.cs" />
+    <Compile Include="XVM.Runtime.Execution\ExecutionState.cs" />
+    <Compile Include="XVM.Runtime.Execution\FieldRef.cs" />
+    <Compile Include="XVM.Runtime.Execution\IReference.cs" />
+    <Compile Include="XVM.Runtime.Execution\PointerRef.cs" />
+    <Compile Include="XVM.Runtime.Execution\PointerType.cs" />
+    <Compile Include="XVM.Runtime.Execution\StackRef.cs" />
+    <Compile Include="XVM.Runtime.Execution\TypedRef.cs" />
+    <Compile Include="XVM.Runtime.Execution\TypedRefPtr.cs" />
+    <Compile Include="XVM.Runtime.Execution\VMContext.cs" />
+    <Compile Include="XVM.Runtime.Execution\VMDispatcher.cs" />
+    <Compile Include="XVM.Runtime.Execution\VMSlot.cs" />
+    <Compile Include="XVM.Runtime.Execution\VMStack.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\AddDword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\AddQword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\AddR32.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\AddR64.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\Call.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\Cmp.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\CmpDword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\CmpQword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\CmpR32.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\CmpR64.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\DivDword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\DivQword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\DivR32.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\DivR64.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\FConvR32.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\FConvR32R64.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\FConvR64.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\FConvR64R32.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\IConvPtr.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\IConvR64.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\IOpCode.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\Jmp.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\Jnz.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\Jz.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\Leave.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\LindByte.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\LindDword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\LindObject.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\LindPtr.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\LindQword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\LindWord.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\MulDword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\MulQword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\MulR32.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\MulR64.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\Nop.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\NorDword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\NorQword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\Pop.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\PushIDword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\PushIQword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\PushRByte.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\PushRDword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\PushRObject.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\PushRQword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\PushRWord.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\RemDword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\RemQword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\RemR32.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\RemR64.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\Ret.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\ShlDword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\ShlQword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\ShrDword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\ShrQword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\SindByte.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\SindDword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\SindObject.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\SindPtr.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\SindQword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\SindWord.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\SubR32.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\SubR64.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\Swt.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\SxByte.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\SxDword.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\SxWord.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\Try.cs" />
+    <Compile Include="XVM.Runtime.OpCodes\Vcall.cs" />
+    <Compile Include="XVM.Runtime.VCalls\Box.cs" />
+    <Compile Include="XVM.Runtime.VCalls\Cast.cs" />
+    <Compile Include="XVM.Runtime.VCalls\Ckfinite.cs" />
+    <Compile Include="XVM.Runtime.VCalls\Ckoverflow.cs" />
+    <Compile Include="XVM.Runtime.VCalls\Ecall.cs" />
+    <Compile Include="XVM.Runtime.VCalls\Exit.cs" />
+    <Compile Include="XVM.Runtime.VCalls\Initobj.cs" />
+    <Compile Include="XVM.Runtime.VCalls\IVCall.cs" />
+    <Compile Include="XVM.Runtime.VCalls\Ldfld.cs" />
+    <Compile Include="XVM.Runtime.VCalls\Ldftn.cs" />
+    <Compile Include="XVM.Runtime.VCalls\Localloc.cs" />
+    <Compile Include="XVM.Runtime.VCalls\Rangechk.cs" />
+    <Compile Include="XVM.Runtime.VCalls\Sizeof.cs" />
+    <Compile Include="XVM.Runtime.VCalls\Stfld.cs" />
+    <Compile Include="XVM.Runtime.VCalls\Throw.cs" />
+    <Compile Include="XVM.Runtime.VCalls\Token.cs" />
+    <Compile Include="XVM.Runtime.VCalls\Unbox.cs" />
+    <Compile Include="XVM.Runtime\Utils.cs" />
+    <Compile Include="XVM.Runtime\VMEntry.cs" />
+    <Compile Include="XVM.Runtime\VMInstance.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

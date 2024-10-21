@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{3885F20A-F4F3-4B2C-9B67-1070654CFC68}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <LangVersion>11.0</LangVersion>
+    <AssemblyName>Xerin.Core</AssemblyName>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <OutputPath>..\RELEASE\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>..\RELEASE\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="dnlib, Version=4.4.0.0, Culture=neutral, PublicKeyToken=50e96378b6e77999, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dnlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Core" />
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="Xerin.Protections, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RELEASE\Xerin.Protections.dll</HintPath>
+    </Reference>
+    <Reference Include="XVM.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RELEASE\XVM.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Confuser.Core\Annotations.cs" />
+    <Compile Include="Confuser.Core\ServiceRegistry.cs" />
+    <Compile Include="Confuser.DynCipher.AST\ArrayIndexExpression.cs" />
+    <Compile Include="Confuser.DynCipher.AST\AssignmentStatement.cs" />
+    <Compile Include="Confuser.DynCipher.AST\BinOpExpression.cs" />
+    <Compile Include="Confuser.DynCipher.AST\BinOps.cs" />
+    <Compile Include="Confuser.DynCipher.AST\Expression.cs" />
+    <Compile Include="Confuser.DynCipher.AST\LiteralExpression.cs" />
+    <Compile Include="Confuser.DynCipher.AST\LoopStatement.cs" />
+    <Compile Include="Confuser.DynCipher.AST\Statement.cs" />
+    <Compile Include="Confuser.DynCipher.AST\StatementBlock.cs" />
+    <Compile Include="Confuser.DynCipher.AST\UnaryOpExpression.cs" />
+    <Compile Include="Confuser.DynCipher.AST\UnaryOps.cs" />
+    <Compile Include="Confuser.DynCipher.AST\Variable.cs" />
+    <Compile Include="Confuser.DynCipher.AST\VariableExpression.cs" />
+    <Compile Include="Confuser.DynCipher.Elements\AddKey.cs" />
+    <Compile Include="Confuser.DynCipher.Elements\BinOp.cs" />
+    <Compile Include="Confuser.DynCipher.Elements\CryptoBinOps.cs" />
+    <Compile Include="Confuser.DynCipher.Elements\CryptoElement.cs" />
+    <Compile Include="Confuser.DynCipher.Elements\CryptoNumOps.cs" />
+    <Compile Include="Confuser.DynCipher.Elements\Matrix.cs" />
+    <Compile Include="Confuser.DynCipher.Elements\NumOp.cs" />
+    <Compile Include="Confuser.DynCipher.Elements\RotateBit.cs" />
+    <Compile Include="Confuser.DynCipher.Elements\Swap.cs" />
+    <Compile Include="Confuser.DynCipher.Generation\CILCodeGen.cs" />
+    <Compile Include="Confuser.DynCipher.Generation\CipherGenContext.cs" />
+    <Compile Include="Confuser.DynCipher.Generation\CipherGenerator.cs" />
+    <Compile Include="Confuser.DynCipher.Generation\DMCodeGen.cs" />
+    <Compile Include="Confuser.DynCipher.Generation\ExpressionGenerator.cs" />
+    <Compile Include="Confuser.DynCipher.Generation\Ix86Operand.cs" />
+    <Compile Include="Confuser.DynCipher.Generation\StatementGenerator.cs" />
+    <Compile Include="Confuser.DynCipher.Generation\x86CodeGen.cs" />
+    <Compile Include="Confuser.DynCipher.Generation\x86ImmediateOperand.cs" />
+    <Compile Include="Confuser.DynCipher.Generation\x86Instruction.cs" />
+    <Compile Include="Confuser.DynCipher.Generation\x86OpCode.cs" />
+    <Compile Include="Confuser.DynCipher.Generation\x86Register.cs" />
+    <Compile Include="Confuser.DynCipher.Generation\x86RegisterOperand.cs" />
+    <Compile Include="Confuser.DynCipher.Transforms\ConvertVariables.cs" />
+    <Compile Include="Confuser.DynCipher.Transforms\ExpansionTransform.cs" />
+    <Compile Include="Confuser.DynCipher.Transforms\MulToShiftTransform.cs" />
+    <Compile Include="Confuser.DynCipher.Transforms\NormalizeBinOpTransform.cs" />
+    <Compile Include="Confuser.DynCipher.Transforms\ShuffleTransform.cs" />
+    <Compile Include="Confuser.DynCipher\CodeGenUtils.cs" />
+    <Compile Include="Confuser.DynCipher\IDynCipherService.cs" />
+    <Compile Include="Confuser.DynCipher\MathsUtils.cs" />
+    <Compile Include="ControlProj.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XCore.CE\AntiTamperExtensions.cs" />
+    <Compile Include="XCore.CE\IKeyDeriver.cs" />
+    <Compile Include="XCore.CE\InjectHelper.cs" />
+    <Compile Include="XCore.CE\Mode.cs" />
+    <Compile Include="XCore.CE\NormalDeriver.cs" />
+    <Compile Include="XCore.CE\RandomGenerator.cs" />
+    <Compile Include="XCore.CE\Utils.cs" />
+    <Compile Include="XCore.Compression\QuickLZ.cs" />
+    <Compile Include="XCore.Context\XContext.cs" />
+    <Compile Include="XCore.Decompression\QuickLZ.cs" />
+    <Compile Include="XCore.DynConverter\Emitter.cs" />
+    <Compile Include="XCore.DynConverter\ExceptionMapper.cs" />
+    <Compile Include="XCore.DynConverter\Extension.cs" />
+    <Compile Include="XCore.DynConverter\XConverter.cs" />
+    <Compile Include="XCore.Embed\Embeder.cs" />
+    <Compile Include="XCore.Emulator.Instructions\Add.cs" />
+    <Compile Include="XCore.Emulator.Instructions\And.cs" />
+    <Compile Include="XCore.Emulator.Instructions\Blt.cs" />
+    <Compile Include="XCore.Emulator.Instructions\Br.cs" />
+    <Compile Include="XCore.Emulator.Instructions\LdcI4.cs" />
+    <Compile Include="XCore.Emulator.Instructions\Ldloc.cs" />
+    <Compile Include="XCore.Emulator.Instructions\Or.cs" />
+    <Compile Include="XCore.Emulator.Instructions\Stloc.cs" />
+    <Compile Include="XCore.Emulator.Instructions\Sub.cs" />
+    <Compile Include="XCore.Emulator.Instructions\Xor.cs" />
+    <Compile Include="XCore.Emulator\EmuContext.cs" />
+    <Compile Include="XCore.Emulator\EmuInstruction.cs" />
+    <Compile Include="XCore.Emulator\XEmulator.cs" />
+    <Compile Include="XCore.Generator\GGeneration.cs" />
+    <Compile Include="XCore.Generator\RandomGenerator.cs" />
+    <Compile Include="XCore.Generator\RandomGeneratorUtils.cs" />
+    <Compile Include="XCore.Injection\DataInjector.cs" />
+    <Compile Include="XCore.Injection\InjectHelper.cs" />
+    <Compile Include="XCore.Injection\Injector.cs" />
+    <Compile Include="XCore.Injection\Injector2.cs" />
+    <Compile Include="XCore.Injection\newInjector.cs" />
+    <Compile Include="XCore.Logger\Logger.cs" />
+    <Compile Include="XCore.Mover\forDynamic.cs" />
+    <Compile Include="XCore.Mover\voidMover.cs" />
+    <Compile Include="XCore.Mutation\XMutationHelper.cs" />
+    <Compile Include="XCore.Optimizer\AutoSimplify.cs" />
+    <Compile Include="XCore.Optimizer\EqualityComparer.cs" />
+    <Compile Include="XCore.Optimizer\Optimization.cs" />
+    <Compile Include="XCore.Optimizer\UnverifiableCodeAttributeAttr.cs" />
+    <Compile Include="XCore.Protections\Protection.cs" />
+    <Compile Include="XCore.Protections\ProtectionManager.cs" />
+    <Compile Include="XCore.Resolver\AssemblyResolve.cs" />
+    <Compile Include="XCore.Shuffler\Shuffler.cs" />
+    <Compile Include="XCore.Simplifier\Simplifying.cs" />
+    <Compile Include="XCore.Terminator\Terminator.cs" />
+    <Compile Include="XCore.Utils\DnlibUtils.cs" />
+    <Compile Include="XCore.Utils\RawHeap.cs" />
+    <Compile Include="XCore.Utils\Utils.cs" />
+    <Compile Include="XCore.VirtHelper\Helper.cs" />
+    <Compile Include="XCore\asmInfo.cs" />
+    <Compile Include="XCore\AttrMarker.cs" />
+    <Compile Include="xHelpers.injection\InjectHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xerin.Runtime\Xerin.Runtime.csproj">
+      <Project>{af73eb1e-984f-4d98-8b7e-a03085e31462}</Project>
+      <Name>Xerin.Runtime</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
